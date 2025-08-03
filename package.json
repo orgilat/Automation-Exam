@@ -1,0 +1,13 @@
+{
+  "name": "draftkings-hs",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0",
+    "allure-playwright": "^2.0.0",
+    "typescript": "^5.0.4",
+    "winston": "^3.8.2"
+  }
+}
