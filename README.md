@@ -45,10 +45,6 @@ All classes utilize Playwright's `APIRequestContext` for HTTP interactions.
 ---
 
 
-
-
-
-
 ## Assumptions
 
 - The backend server is accessible locally on `http://localhost:3000` and supports all required endpoints.
@@ -60,49 +56,32 @@ All classes utilize Playwright's `APIRequestContext` for HTTP interactions.
 
 ---
 
-## Running the Tests Locally
+## 4. Local Execution
 
-### Option 1: Windows Users - Using `run-tests.bat`
+```bash
+# Run API & UI tests\ npx playwright test
 
-You can either double-click the `run-tests.bat` script, or run it directly from your terminal:
+# Generate Allure report\ npx allure generate allure-results --clean -o allure-report
 
-This will:
+# Open the report\ npx allure open allure-report
+```
 
-- Run all Playwright tests  
-- Generate a fresh Allure report  
-- Open the report automatically in your default browser  
-
-If you’re on Linux and need a `.sh` script — let me know, I can create one.
+> **Windows users:** I’ve provided a quick-run batch file so you can generate and view the report with a double-click.
 
 ---
 
-### Option 2: Manual Run (Cross-platform)
+## CI Pipeline Behavior
 
-Run the following commands manually in your terminal:
+On every push or PR to `main`, GitHub Actions will:
 
-npx playwright test
-npx allure generate allure-results --clean -o allure-report
-npx allure open allure-report
-
-yaml
-Copy
-Edit
+1. Checkout code & install dependencies (`npm ci`).
+2. Install Playwright browsers (`npx playwright install --with-deps`).
+3. Run all tests (`npx playwright test`).
+4. Generate Allure report (`npx allure generate allure-results --clean -o allure-report`).
+5. Upload `allure-report/` as an artifact.
 
 ---
 
-## GitHub CI/CD Integration
-
-A full GitHub Actions workflow is included:
-
-- Triggered on every push or pull request to the `main` branch  
-- Installs dependencies and Playwright browsers  
-- Executes the full test suite  
-- Generates Allure report  
-- Uploads Allure report as downloadable artifact  
-
-You can view results in GitHub → Actions tab → latest run → download allure report
-
----
 
 ## Estimated Time Taken
 
