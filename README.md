@@ -93,5 +93,5 @@ On every push or PR to `main`, GitHub Actions will:
 | Requirement analysis, high-level test plan, debugging & optimization | 1.5 hours        |
 | Project design, infrastructure setup, debugging & optimization       | 2.5 - 3 hours    |
 | Full solution implementation                                         | 40 minutes–1 hour|
-| README & documentation                                               | 30 minutes       |
-| **Total**                                                            | **~5.5 - 6 hours** |
+| README                                                               | 30 - 40 minutes  |
+| **Total**                                                            |**~5.5 - 6 hours**|
