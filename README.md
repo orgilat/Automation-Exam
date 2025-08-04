@@ -47,7 +47,7 @@ The `.env` file allows you to customize key parameters:
 BASE_URL=http://localhost:3000
 USER_ID=123
 BET_AMOUNT=10
-
+---
 # ⚠️ Assumptions
 
 - The backend server is accessible locally on `http://localhost:3000` and supports all required endpoints.
