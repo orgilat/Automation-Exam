@@ -103,16 +103,8 @@ A full GitHub Actions workflow is included:
 You can view results in GitHub → Actions tab → latest run → download allure report
 
 ---
-## 📂 `.env` Configuration
 
-A `.env` file is included to allow flexible environment setup:
-
-```env
-BASE_URL=http://localhost:3000
-USER_ID=123
-BET_AMOUNT=10
 ## Estimated Time Taken
----
 
 | Task                                                                 | Time             |
 |----------------------------------------------------------------------|------------------|
