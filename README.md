@@ -6,50 +6,57 @@ This repository contains files related to all 3 automation tasks:
 
 ## 📌 File Breakdown by Task:
 
-| File Name                     | Task     | Description                                      |
-|------------------------------|----------|------------------------------------------------|
-| `Part 1 - Test Design.xlsx`   | Task 1   | Manual test cases design for Slot Game          |
-| `Part 3 - Code Debugging.pdf` | Task 3   | Debugging + code review feedback for broken tests|
+| File Name                      | Task     | Description                                           |
+|-------------------------------|----------|-------------------------------------------------------|
+| `Part 1 - Test Design.xlsx`   | Task 1   | Manual test cases design for the Slot Game           |
+| `Part 3 - Code Debugging.pdf` | Task 3   | Debugging + code review feedback for broken tests     |
 | *All remaining project files* | **Task 2** | Full automation suite for Slot Game API (Playwright) |
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology       | Purpose                                                           |
-|------------------|-------------------------------------------------------------------|
-| **Playwright**   | API test automation framework with test runner                    |
-| **Allure**       | Reporting system to visualize test steps, logs, and results       |
-| **Winston**      | Logging library used to track API requests/responses              |
-| **dotenv**       | Loads environment variables from `.env`                           |
-| **GitHub Actions** | Automates test execution on every push or PR to main             |
+| Technology        | Purpose                                                             |
+|-------------------|---------------------------------------------------------------------|
+| **Playwright**     | API test automation framework with integrated test runner           |
+| **Allure**         | Generates interactive HTML reports for test execution              |
+| **Winston**        | Logging library used for structured API request/response logs      |
+| **dotenv**         | Loads environment variables from a `.env` file                     |
+| **GitHub Actions** | Automates test execution on every push/PR to the `main` branch     |
 
 ---
 
 ## 🤖 API Clients Rationale
 
-All 4 main APIs were implemented as dedicated classes to allow **reusability**, **clean separation of logic**, and **easy test scalability**:
+All 4 core APIs were implemented as modular classes to ensure:
+- 🔁 Reusability
+- 🧹 Separation of concerns
+- ⚙️ Scalable and maintainable test structure
 
-- `UserApi` – Balance retrieval and update  
-- `GameApi` – Spins the slot machine  
-- `PaymentApi` – Handles placing bets and payouts  
-- `NotificationApi` – Sends game result notifications to the user  
+| API Class          | Responsibility                                      |
+|--------------------|-----------------------------------------------------|
+| `UserApi`          | Retrieve and update user balance                    |
+| `GameApi`          | Perform game spins                                  |
+| `PaymentApi`       | Handle bet placement and payout logic               |
+| `NotificationApi`  | Send user notifications after each spin             |
 
-Each API class uses `APIRequestContext` injected from Playwright for request management.
+All classes utilize Playwright's `APIRequestContext` for HTTP interactions.
 
 ---
 
-## 📂 .env Configuration
+## 📂 `.env` Configuration
 
-The `.env` file allows you to customize key parameters:
+A `.env` file is included to allow flexible environment setup:
 
 ```env
 BASE_URL=http://localhost:3000
 USER_ID=123
 BET_AMOUNT=10
 
+
 ---
-# ⚠️ Assumptions
+
+## Assumptions
 
 - The backend server is accessible locally on `http://localhost:3000` and supports all required endpoints.
 - The user ID used for testing has a sufficient initial balance.
@@ -59,9 +66,10 @@ BET_AMOUNT=10
   - Notifications are always expected after every spin
 
 ---
-# Running the Tests Locally
 
-## Option 1: Windows Users - Using `run-tests.bat`
+## Running the Tests Locally
+
+### Option 1: Windows Users - Using `run-tests.bat`
 
 You can either double-click the `run-tests.bat` script, or run it directly from your terminal:
 
@@ -71,9 +79,11 @@ This will:
 - Generate a fresh Allure report  
 - Open the report automatically in your default browser  
 
-If you’re on Linux and need a .bash script — let me know, I can create one.
+If you’re on Linux and need a `.sh` script — let me know, I can create one.
 
 ---
+
+### Option 2: Manual Run (Cross-platform)
 
 Run the following commands manually in your terminal:
 
@@ -81,6 +91,9 @@ npx playwright test
 npx allure generate allure-results --clean -o allure-report
 npx allure open allure-report
 
+yaml
+Copy
+Edit
 
 ---
 
@@ -106,4 +119,4 @@ You can view results in GitHub → Actions tab → latest run → download allur
 | Project design, infrastructure setup, debugging & optimization       | 2.5 - 3 hours    |
 | Full solution implementation                                         | 40 minutes–1 hour|
 | README & documentation                                               | 30 minutes       |
-| **Total**                                                            |**~5.5- 6 hours** |
+| **Total**                                                            | **~5.5 - 6 hours** |
