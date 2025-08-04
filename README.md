@@ -12,6 +12,9 @@ This repository contains files related to all 3 automation tasks:
 | `Part 3 - Code Debugging.pdf` | Task 3   | Debugging + code review feedback for broken tests     |
 | *All remaining project files* | **Task 2** | Full automation suite for Slot Game API (Playwright) |
 
+> **📝 Note about Task 3:**  
+> When reviewing `Part 3 - Code Debugging.pdf`, make sure to scroll all the way down.
+
 ---
 
 ## 🛠️ Technologies Used
