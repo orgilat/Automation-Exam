@@ -54,7 +54,6 @@ All classes utilize Playwright's `APIRequestContext` for HTTP interactions.
 - The user ID used for testing has a sufficient initial balance.
 - Endpoints follow expected contract:
   - `/slot/spin` returns an outcome of either `"WIN"` or `"LOSE"`
-  - `/payment/payout` is called only on win, and the `winAmount` matches the spin result
   - Notifications are always expected after every spin
 
 ---
@@ -90,9 +89,9 @@ On every push or PR to `main`, GitHub Actions will:
 
 | Task     | Activities                                                               | Estimated Time     |
 |----------|---------------------------------------------------------------------------|--------------------|
-| Task 1   | Requirement analysis, high-level test plan, debugging & optimization      | 1.5 hours          |
+| Task 1   | Requirement analysis, high-level test plan, debugging & optimization      | 2 hours          |
 | Task 2   | Project design, infrastructure setup, debugging & optimization            | 2.5 – 3 hours      |
-| Task 3   | Full solution implementation                                              | 40 minutes – 1 hour|
+| Task 3   | Full solution implementation                                              | 50 minutes – 1 hour|
 | README   | Documentation & structure clarification                                   | 30 – 40 minutes    |
-| **Total**| –                                                                         | **~5.5 – 6 hours** |
+| **Total**| –                                                                         | **~6 – 6.5 hours** |
 
