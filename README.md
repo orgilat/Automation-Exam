@@ -24,7 +24,6 @@ This repository contains files related to all 3 automation tasks:
 | **Playwright**     | API test automation framework with integrated test runner           |
 | **Allure**         | Generates interactive HTML reports for test execution              |
 | **Winston**        | Logging library used for structured API request/response logs      |
-| **dotenv**         | Loads environment variables from a `.env` file                     |
 | **GitHub Actions** | Automates test execution on every push/PR to the `main` branch     |
 
 ---
